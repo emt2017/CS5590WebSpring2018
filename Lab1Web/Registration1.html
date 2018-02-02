@@ -1,0 +1,85 @@
+<!-- Copy and Paste of Registration.html to show the Law enroll website.
+This document is different because the Available seats was set to 0 and shows the exception made
+in the code if someone tries to enroll into a full class. This exception was already made in Registration.html
+but could not be demonstrated-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css" >
+    <title>Title</title>
+    <style>
+        .roundBorder{
+            border: 2px solid #d3d3d3;
+            border-radius: 5px;
+            padding: 5px;
+            padding-bottom: 15px;
+            margin: 15px;
+        }
+        .button{
+            text-decoration: none;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            color: white;
+            background-color: green;
+            border-radius: 5px;
+        }
+        .no-padding{
+            padding-top: 20px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class = "row">
+        <div col-lg-12 col-md-12 col-sm-12 col-xs-12>
+            <h1 class="no-padding">Registration Page</h1>
+            <hr>
+        </div>
+    </div>
+    <div class = "row roundBorder">
+        <img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG">
+        <div class="no-margin col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+            <h3><b>Registration Information:</b></h3>
+            <span>Total Seats: 40</span>
+            <br>
+            <span id="seatsAvailable">Seats Available: 0</span>
+            <br>
+            <span id = "currentlyEnroll">Currently Enrolled: 40</span>
+            <br>
+            <br>
+        </div>
+        <button class = "button col-lg-12 col-md-12 col-sm-12 col-xs-12" onclick="confirm()" >Confirm Registration</button>
+    </div>
+</div>
+<script>
+    //Global Variables
+    x = 0;
+    availableSeats = 0;
+    currentlyEnrolled = 40;
+
+    //if availableSeats
+    function confirm(){
+        if(availableSeats != 0){
+            if(x==0){
+                alert("Congratulations!!! You have been enrolled! Now give us $5000.00");
+                document.getElementById('currentlyEnroll').innerHTML ="Currently Enrolled: " + ++currentlyEnrolled;
+                document.getElementById('seatsAvailable').innerHTML ="Seats Available: " + --availableSeats;
+                ++x;
+            }
+            else{
+                alert("You have already been enrolled!");
+            }
+        }
+        else{
+            alert("This class is currently full.");
+        }
+    }
+</script>
+</body>
+</html>

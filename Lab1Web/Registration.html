@@ -1,0 +1,101 @@
+<!-- This is the Registration Page that index.html gets redirected to if the class photos, or the enroll buttons
+are clicked -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css" >
+    <title>Title</title>
+    <!-- I used in file css because this webpage was too small to warrant a separate css file and to demonstrate
+    that I am aware of its existence-->
+    <style>
+        /*Creates a round border - used for the class panels*/
+        .roundBorder{
+            border: 2px solid #d3d3d3;
+            border-radius: 5px;
+            padding: 5px;
+            padding-bottom: 15px;
+            margin: 15px;
+        }
+        /*Makes the button pretty*/
+        .button{
+            text-decoration: none;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            color: white;
+            background-color: green;
+            border-radius: 5px;
+        }
+        /*gets rid of side padding from bootstrap, adds 20px to align photo with title, 10px to get make space
+         between photo and button*/
+        .no-padding{
+            padding-top: 20px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--Title-->
+    <div class = "row">
+        <div col-lg-12 col-md-12 col-sm-12 col-xs-12>
+            <h1 class="no-padding">Registration Page</h1>
+            <hr>
+        </div>
+    </div>
+    <!--Creates Panel and shows Total seats, Seats Available, Currently Enrolled
+    these values will be changed on the panel based on the code in javascript-->
+    <div class = "row roundBorder">
+            <img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg">
+            <div class="no-margin col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+                <h3><b>Registration Information:</b></h3>
+                <span>Total Seats: 40</span>
+                <br>
+                <span id="seatsAvailable">Seats Available: 39</span>
+                <br>
+                <span id = "currentlyEnroll">Currently Enrolled: 1</span>
+                <br>
+                <br>
+            </div>
+        <button class = "button col-lg-12 col-md-12 col-sm-12 col-xs-12" onclick="confirm()" >Confirm Registration</button>
+    </div>
+</div>
+<script>
+    //Global Variables
+    x = 0;
+    availableSeats = 39;
+    currentlyEnrolled = 1;
+
+    //activates on click with the "Confirm Registration" button
+    //shows a popup message that states:
+    //if successfully enrolled
+    //if already enrolled
+    //if class is currently full
+    function confirm(){
+        //if availableSeats is not 0
+        if(availableSeats != 0){
+            //then if user hasn't clicked before alerts successfully enrolled
+            //updates seat values
+            if(x==0){
+                alert("Congratulations!!! You have been enrolled! Now give us $5000.00");
+                document.getElementById('currentlyEnroll').innerHTML ="Currently Enrolled: " + ++currentlyEnrolled;
+                document.getElementById('seatsAvailable').innerHTML ="Seats Available: " + --availableSeats;
+                ++x;
+            }
+            //If user already enrolled display message
+            else{
+                alert("You have already been enrolled!");
+            }
+        }
+        // if available is 0 then class is full
+        else{
+            alert("This class is currently full.");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css" >
+    <title>Course Registration App</title>
+    <!-- I used in file css because this webpage was too small to warrant a separate css file and to demonstrate
+    that I am aware of its existence-->
+    <style>
+        /*Creates a round border - used for the class panels*/
+        .roundBorder{
+            border: 2px solid #d3d3d3;
+            border-radius: 5px;
+            padding: 5px;
+            padding-bottom: 15px;
+            margin: 15px;
+        }
+        /*gets rid of side padding from bootstrap*/
+        .no-padding{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        /*Makes the enroll button pretty*/
+        .button{
+            text-decoration: none;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            color: white;
+            background-color: green;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container-fluid">
+
+        <div class ="row">
+            <!--This column includes all of the buttons for the user to select their preferred class options
+            option 1: is the education level, when checked it only shows classes available for BS
+            option 2: is the season(Semester), when checked it will only show classes for spring, fall, or summer
+            option 3: is the career option, this will show all classes available for that career option/ multiple can be selected
+            the Default options are Bachelors, Spring, all Career options-->
+            <div class ="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <form>
+                    <h3>Education Level</h3>
+                    <hr>
+                    <input type="radio" name="eduLvl" value="Bachelors" id="BS" onclick="changeClass()" checked>
+                    <span>Bachelors</span>
+                    <br>
+                    <input type="radio" name = "eduLvl" value = "Graduate" id="GS" onclick="changeClass()">
+                    <span>Graduate</span>
+                </form>
+                <br>
+                <form>
+                    <h3>Semester</h3>
+                    <hr>
+                    <input type ="radio" name="semester" value = "Spring" id="Spring" onclick="changeClass()" checked>
+                    <span>Spring</span>
+                    <br>
+                    <input type ="radio" name="semester" value = "Summer" onclick="changeClass()" id="Summer">
+                    <span>Summer</span>
+                    <br>
+                    <input type ="radio" name="semester" value = "Fall" onclick="changeClass()" id="Fall">
+                    <span>Fall</span>
+                </form>
+                <br>
+                <form>
+                    <h3 >Career Options</h3>
+                    <hr>
+                    <input type = "checkbox" onclick="changeClass()" id="ComputerScience" checked>
+                    <span >Computer Science</span>
+                    <br>
+
+                    <input type = "checkbox" onclick="changeClass()" id="Law" checked>
+                    <span>Law</span>
+                    <br>
+
+                    <input type = "checkbox" onclick="changeClass()" id="Engineering" checked>
+                    <span>Engineering</span>
+                </form>
+            </div>
+            <!--Div which divides the Graduate courses from the Bachelors courses -->
+        <div id = "GScourse" class="show">
+            <!--These courses are separated by seasons(semesters)
+             each course has its own panel and will show based on the selected options above
+             The panels are copy and pasted, with edited words/photos to reflect the degree, semester, and education level-->
+
+            <div id = "springCourseGS">
+                <!--This is the start of the first panel -->
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "springEngGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Spring <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--This is the end of the very first panel. The rest of the panels are the same as this panel with minor cosmetic edits -->
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "springLawGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration1.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Spring <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration1.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "springCSGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration2.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/CS.jpg"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Spring <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration2.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id = "fallCourseGS">
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "fallEngGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Fall <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "fallLawGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration1.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Fall <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration1.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "fallCSGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration2.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/CS.jpg"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Fall <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration2.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="summerCourseGS">
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "summerEngGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Summer <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "summerLawGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration1.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Summer <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration1.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "summerCSGS">
+                    <div class = "row">
+                        <div class="roundBorder">
+                            <a href="Registration2.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/CS.jpg"></a>
+                            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Summer <b>| Education Level:</b> Graduate</p>
+
+                                <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                <span><b>Prerequisites:</b></span>
+                                <ul>
+                                    <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                    <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <span><b>Ratings & Reviews:</b></span>
+                                    <img src="./img/Capture.PNG" class = "img-responsive" >
+                                    <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div style = "float: right;">
+                                        <form method="get" action = "Registration2.html">
+                                            <button class ="button" >Enroll</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- This is the Bachelors div which is a copy of the Graduates, and edited to show the bachelors courses -->
+            <div id = "BScourse" class="show">
+                <div id = "springCourseBS">
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "springEngBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Spring <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "springLawBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration1.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Spring <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration1.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "springCSBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration2.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/CS.jpg"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Spring <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration2.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id = "fallCourseBS">
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "fallEngBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Fall <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "fallLawBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration1.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Fall <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration1.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "fallCSBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration2.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/CS.jpg"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Fall <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration2.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="summerCourseBS">
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "summerEngBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/robo4x_378x225.jpg"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Summer <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "summerLawBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration1.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/law.PNG"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Summer <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration1.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-lg-9 col-md-9 col-sm-9 col-xs-12" id = "summerCSBS">
+                        <div class = "row">
+                            <div class="roundBorder">
+                                <a href="Registration2.html"><img class="no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12" src="./img/CS.jpg"></a>
+                                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <p><b>Instructor:</b> Dan Koditschek <b>| Credit Hours:</b> 4 <b>| Duration:</b> 12 weeks <b>| Semester:</b> Summer <b>| Education Level:</b> Bachelors</p>
+
+                                    <p><b>Course Description:</b> Learn how to design, build, and program dynamical, legged robots that can operate in the real world.</p>
+
+                                    <span><b>Prerequisites:</b></span>
+                                    <ul>
+                                        <li>Good understanding of multivariable calculus and some prior exposure to linear algebra and ordinary differential equations.</li>
+                                        <li>We will be making specific use of the kinematics and dynamics ideas developed in the ROBO3x, certain linear algebra techniques in the ROBO1x, and various ideas and techniques presented in the ROBO2x. </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <hr>
+                                        <span><b>Ratings & Reviews:</b></span>
+                                        <img src="./img/Capture.PNG" class = "img-responsive" >
+                                        <p>Hi thanks for this good facilities for the student OR learner who are unable to learn while doing job . I am really happy before login this but get shock after due the terms and condition . request to clear my misunderstanding . i want to take knowledge from this site but am not able to paid the charges waht demanded .</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div style = "float: right;">
+                                            <form method="get" action = "Registration2.html">
+                                                <button class ="button" >Enroll</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
