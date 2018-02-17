@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBC News API Demonstration</title>
+    <link rel="stylesheet" href="bootstrap.css" >
+    <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+        .links{
+            text-align: center;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class = "container-fluid">
+        <form action="javascript:void(0);" onsubmit="erase()">
+            <div class = "row">
+                <h1 class = "centerText">BBC News Search</h1>
+            </div>
+            <div class = "row">
+                <input id="searchBar" class = "col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 col-lg-4 col-md-6 col-sm-8 col-xs-10">
+            </div>
+            <div class = "row centerText">
+                <br>
+                <span><b>Search By:</b></span>
+                <input type="radio" name="searchBy" id="Topic" checked>
+                <span>Topic</span>
+                <input type="radio" name="searchBy" id="Source">
+                <span>Source</span>
+            </div>
+        </form>
+        <div class="links row">
+            <span ><a class = "links" href="Login.html">Login</a> | <a href="Registration.html">Register</a></span>
+        </div>
+    </div>
+
+    <!--
+        headlines -> title
+        image -> when clicked redirected to page
+        timeStamp of article
+        unexpected values with message
+    -->
+    <hr>
+    <div id="article">
+
+    </div>
+</body>
+</html>

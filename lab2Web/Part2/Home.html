@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "TicTacToeApp">
+<head>
+    <meta charset="UTF-8">
+    <title>BBC News API Demonstration</title>
+    <link rel="stylesheet" href="bootstrap.css" >
+    <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <div class = "container-fluid">
+        <h1 class="centerText">TIC-TAC-TOE</h1>
+        <hr>
+        <div ng-controller = "TicTacToeAppController">
+            <div class="row center"  >
+                <div id="0" class="box" ng-click="XO(0)">
+                    {{display[0]}}
+                </div>
+                <div id="1" class="box"  ng-click="XO(1)">
+                    {{display[1]}}
+                </div>
+                <div id="2" class="box" ng-click="XO(2)">
+                    {{display[2]}}
+                </div>
+            </div>
+            <div class="row center">
+                <div id="3" class="box" ng-click="XO(3)">
+                    {{display[3]}}
+                </div>
+                <div id="4" class="box" ng-click="XO(4)">
+                    {{display[4]}}
+                </div>
+                <div id="5" class="box" ng-click="XO(5)">
+                    {{display[5]}}
+                </div>
+            </div>
+            <div class="row center">
+                <div id="6" class="box" ng-click="XO(6)">
+                    {{display[6]}}
+                </div>
+                <div id="7" class="box" ng-click="XO(7)">
+                    {{display[7]}}
+                </div>
+                <div id="8" class="box" ng-click="XO(8)">
+                    {{display[8]}}
+                </div>
+            </div>
+            <hr>
+            <div class="row centerText margin">
+                {{communicate}}
+            </div>
+            <hr>
+            <div class="row centerText margin">
+                <button ng-click="reset()" class="centerText button">New Game</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
