@@ -1,0 +1,2 @@
+You will need to unzip the mobile file and navigate to AndroidLab1\app\build and
+ then made a folder called "intermediates" and unzip intermediates 1 & 2 in there
